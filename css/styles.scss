@@ -1,0 +1,25 @@
+@use '_variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+	--cyan-300: #8FE3F9;
+	--cyan-600: #4D96A9;
+	--purple-300: #D9B8FF;
+	--purple-600: #855FB1;
+	--slate-300: #D1D1DF;
+	--slate-600: #87879D;
+	--slate-900: #28283D;
+	--white: #FAFAFA;
+	--text-preset-1: 900 4rem/1.1 "Red Hat Display", sans-serif;
+	--text-preset-2: 900 2.5rem/1.1 "Red Hat Display", sans-serif;
+	--text-preset-3: 900 1rem/1.1 "Red Hat Display", sans-serif;
+	--text-preset-4: 500 1.125rem/1.1 "Red Hat Display", sans-serif;
+	--text-preset-5: 900 1rem/1.5 "Red Hat Display", sans-serif;
+	max-width: 100vw;
+	min-height: 100vh;
+}
