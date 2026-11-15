@@ -19,7 +19,7 @@ $text-preset-5: 900 1rem/1.5 "Red Hat Display", sans-serif;
 }
 
 :root {
-  max-width: 100vw;
+  width: 100vw;
   min-height: 100vh;
 }
 
@@ -31,9 +31,15 @@ body {
   justify-content: center;
   align-items: center;
   font: $text-preset-1;
+	overflow-x: hidden;
+	padding-top: 3rem;
   text-align: center;
+	width: 100%;
 }
 
+.section-content {
+	width: clamp(0rem, 81.3vw, 28rem);
+}
 h1 {
   color: $slate-900;
   font: $text-preset-1;
@@ -51,6 +57,7 @@ h3 {
 p {
   color: $slate-600;
   font: $text-preset-4;
+	margin: 0 auto;
 }
 button {
   border: 0;
@@ -85,11 +92,13 @@ button {
 .header {
   display: flex;
   flex-direction: column;
+	align-items: center;
   gap: 1.5rem;
+	overflow: hidden;
   padding-top: calc(2rem + calc(0.3695 * (100vw + 3.625rem)));
   position: relative;
   margin: 3rem 0 2rem;
-  width: clamp(0rem, 81.3vw, 30rem);
+	width: 100%;
 
   h1 {
     font-size: 2.5rem;
@@ -104,7 +113,6 @@ button {
     button.cta {
       background: $cyan-600;
       color: $white;
-      width: clamp(10rem, 51.46vw, 63.3%);
 
       &.version-number {
         color: $cyan-300;
@@ -114,7 +122,6 @@ button {
     button.more-info {
       background: $purple-600;
       color: $white;
-      width: clamp(8rem, 43vw, 52.7%);
     }
   }
 }
@@ -122,15 +129,15 @@ button {
 .header::before {
   content: "";
   background-image: url("../assets/tablet/image-hero.png");
-  background-size: contain;
+  background-size: cover;
+	overflow: hidden;
   position: absolute;
-  left: -3.5rem;
+  left: -1.8rem;
   top: 0;
+	overflow: hidden;
   width: calc(100vw + 3.625rem);
   height: calc(0.3695 * (100vw + 3.625rem));
 }
-
-
 
 .step-1 {
   display: flex;
@@ -169,12 +176,17 @@ button {
     background-size: cover;
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		align-items: center;
     margin-top: -1.75rem;
     padding: 4rem 2rem;
     position: relative;
     width: 100%;
-
+		.content-box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1.5rem;
+		}
     h3 {
       color: $white;
 			position: relative;
@@ -207,4 +219,29 @@ button {
     height: 100%;
     z-index: 0;
   }
+}
+
+@media screen and (min-width: 600px) {
+	h1 {
+		font-size: 3rem;
+	}
+
+	.header {
+		.top-buttons {
+			flex-direction: row;
+			justify-content: center;
+		}
+	}
+
+	.step-1 {
+		.image-collage {
+			grid-template: 1fr / repeat(4, 1fr);
+		}
+		.step-1-content {
+			width: 65.6vw;
+		}
+	}
+	.step-2 .step-2-content .content-box {
+		width: 65.6vw;
+	}
 }

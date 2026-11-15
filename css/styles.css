@@ -5,7 +5,7 @@
 }
 
 :root {
-  max-width: 100vw;
+  width: 100vw;
   min-height: 100vh;
 }
 
@@ -17,7 +17,14 @@ body {
   justify-content: center;
   align-items: center;
   font: 900 2.5rem/1.1 "Red Hat Display", sans-serif;
+  overflow-x: hidden;
+  padding-top: 3rem;
   text-align: center;
+  width: 100%;
+}
+
+.section-content {
+  width: clamp(0rem, 81.3vw, 28rem);
 }
 
 h1 {
@@ -40,6 +47,7 @@ h3 {
 p {
   color: #87879d;
   font: 500 1rem/1.1 "Red Hat Display", sans-serif;
+  margin: 0 auto;
 }
 
 button {
@@ -78,11 +86,13 @@ button {
 .header {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
+  overflow: hidden;
   padding-top: calc(2rem + 0.3695 * (100vw + 3.625rem));
   position: relative;
   margin: 3rem 0 2rem;
-  width: clamp(0rem, 81.3vw, 30rem);
+  width: 100%;
 }
 .header h1 {
   font-size: 2.5rem;
@@ -96,7 +106,6 @@ button {
 .header .top-buttons button.cta {
   background: #4d96a9;
   color: #fafafa;
-  width: clamp(10rem, 51.46vw, 63.3%);
 }
 .header .top-buttons button.cta.version-number {
   color: #8fe3f9;
@@ -104,16 +113,17 @@ button {
 .header .top-buttons button.more-info {
   background: #855fb1;
   color: #fafafa;
-  width: clamp(8rem, 43vw, 52.7%);
 }
 
 .header::before {
   content: "";
   background-image: url("../assets/tablet/image-hero.png");
-  background-size: contain;
+  background-size: cover;
+  overflow: hidden;
   position: absolute;
-  left: -3.5rem;
+  left: -1.8rem;
   top: 0;
+  overflow: hidden;
   width: calc(100vw + 3.625rem);
   height: calc(0.3695 * (100vw + 3.625rem));
 }
@@ -153,11 +163,17 @@ button {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
   margin-top: -1.75rem;
   padding: 4rem 2rem;
   position: relative;
   width: 100%;
+}
+.step-2 .step-2-content .content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 .step-2 .step-2-content h3 {
   color: #fafafa;
@@ -188,6 +204,25 @@ button {
   width: 100%;
   height: 100%;
   z-index: 0;
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .header .top-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .step-1 .image-collage {
+    grid-template: 1fr/repeat(4, 1fr);
+  }
+  .step-1 .step-1-content {
+    width: 65.6vw;
+  }
+  .step-2 .step-2-content .content-box {
+    width: 65.6vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
