@@ -19,7 +19,7 @@
 }
 @mixin text-preset-p {
   color: var(--slate-600);
-  font: var(--font-weight-medium) var(--_font-size-p, --font-size-p) var(--font-family);
+  font: var(--font-weight-medium) var(--_font-size-p, var(--font-size-p)) var(--font-family);
 }
 
 * {
