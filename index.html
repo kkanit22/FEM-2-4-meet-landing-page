@@ -23,10 +23,10 @@
 		</div>
 		<div class="top-buttons">
 			<button class="cta">Download <span class="version-number">v1.3</span></button>
-			<button class="more-info">What is it?</button>
+			<button class="more-info" onclick="scrollToSection()">What is it?</button>
 		</div>
 	</section>
-	<section class="step-1">
+	<section class="step-1" id="step1">
 		<div class="step-indicator">
 			<hr class="vertical-line" />
 			<div class="step-number"><span class="number">01</span></div>
@@ -61,5 +61,13 @@
 	</section>
 
 </body>
+
+<script>
+  function scrollToSection() {
+    const element = document.getElementById("step1");
+		console.log(element);
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+</script>
 
 </html>
