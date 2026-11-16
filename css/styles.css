@@ -68,13 +68,13 @@ h3 {
 
 p {
   color: var(--slate-600);
-  font: var(--font-weight-medium) var(--font-size-p) var(--font-family);
+  font: var(--font-weight-medium) var(--_font-size-p, --font-size-p) var(--font-family);
   margin: 0 auto;
 }
 
 button {
   color: var(--white);
-  font: var(--font-weight-black) var(--font-size-p) var(--font-family);
+  font: var(--font-weight-black) var(--_font-size-p, --font-size-p) var(--font-family);
   border: 0;
   border-radius: 1.8125rem;
   padding: 1rem 2.5rem;
@@ -142,7 +142,7 @@ button {
 
 .step-number {
   color: var(--white);
-  font: var(--font-weight-black) var(--font-size-p) var(--font-family);
+  font: var(--font-weight-black) var(--_font-size-p, --font-size-p) var(--font-family);
   background-color: var(--white);
   border: 1px solid var(--slate-300);
   border-radius: 100%;
@@ -269,10 +269,10 @@ button {
 }
 @media screen and (min-width: 1000px) {
   body {
+    --_font-size-p: calc(1rem + 0.5vw);
     padding-top: 5rem;
   }
   .header {
-    --font-size-p: calc(1rem + 0.5vw);
     gap: calc(1rem + 1vw);
     padding-bottom: 1.5rem;
     padding-top: clamp(0rem, (100vw - 90rem) / 10, 6rem);
@@ -327,9 +327,6 @@ button {
   }
   .step-1 .section-content h3 {
     width: 28rem;
-  }
-  .step-1 .section-content p {
-    font-size: 1.125rem;
   }
   .step-2 {
     width: 100%;

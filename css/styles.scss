@@ -15,11 +15,11 @@
 }
 @mixin text-preset-button {
   color: var(--white);
-  font: var(--font-weight-black) var(--font-size-p) var(--font-family);
+  font: var(--font-weight-black) var(--_font-size-p, --font-size-p) var(--font-family);
 }
 @mixin text-preset-p {
   color: var(--slate-600);
-  font: var(--font-weight-medium) var(--font-size-p) var(--font-family);
+  font: var(--font-weight-medium) var(--_font-size-p, --font-size-p) var(--font-family);
 }
 
 * {
@@ -275,10 +275,10 @@ button {
 
 @media screen and (min-width: 1000px) {
   body {
+		--_font-size-p: calc(1rem + 0.5vw);
     padding-top: 5rem;
   }
   .header {
-    --font-size-p: calc(1rem + 0.5vw);
     gap: calc(1rem + 1vw);
     padding-bottom: 1.5rem;
     padding-top: clamp(0rem, calc((100vw - 90rem) / 10), 6rem);
@@ -331,9 +331,6 @@ button {
       width: clamp(0rem, 37.77vw, 34rem);
       h3 {
         width: 28rem;
-      }
-      p {
-        font-size: 1.125rem;
       }
     }
   }
